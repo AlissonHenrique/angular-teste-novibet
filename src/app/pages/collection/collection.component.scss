@@ -1,0 +1,36 @@
+section.container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .collection-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    .collection-item{
+      width: 100%;
+      max-width: 268px;
+
+      padding:8px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      gap: 8px;
+
+      button{
+          margin-top: 16px;
+      }
+      button.red {
+        background-color: #e53935  ;
+        color: #fff;
+      }
+
+  }
+  }
+
+}
+
