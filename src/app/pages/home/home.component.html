@@ -1,0 +1,21 @@
+<section >
+  <h1>Home</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Search  " />
+  </form>
+
+  <div class="container-list">
+    <div class="list-item" *ngFor="let item of list$ | async"  >
+      <img [src]="item.image" alt="item.name" (click)="openDialog(item)">
+      <div class="info">
+      <h2>{{item.name}}</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+

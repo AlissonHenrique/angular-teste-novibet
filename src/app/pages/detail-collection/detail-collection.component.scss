@@ -1,0 +1,30 @@
+.container-list{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top:16px ;
+  gap:16px;
+  .list-item{
+    width: 100%;
+    max-width: 368px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding:8px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 8px;
+    img{
+
+      display: block;
+      width: 50%;
+    }
+    button.red {
+      background-color: #e53935  ;
+      color: #fff;
+    }
+  }
+
+}

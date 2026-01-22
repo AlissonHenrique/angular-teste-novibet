@@ -1,0 +1,21 @@
+<section class="container">
+  <h1>Create Collection</h1>
+<hr>
+
+
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input matInput    formControlName="title">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Description</mat-label>
+    <input matInput     formControlName="description">
+  </mat-form-field>
+  <button  mat-flat-button>Send</button>
+
+
+
+</form>
+
+  </section>

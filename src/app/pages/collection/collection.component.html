@@ -1,0 +1,21 @@
+<section class="container">
+  <h1>Collection</h1>
+<hr>
+<div class="collection-container">
+<div
+    class="collection-item"
+    *ngFor="let item of collections; else noCollection"
+  >
+    <p>Title: {{ item.title }}</p>
+    <p>Description: {{ item.description }}</p>
+
+    <button mat-flat-button (click)="onDetail(item)">See more</button>
+    <button mat-flat-button class="red"(click)="onDelete(item)">Delete</button>
+  </div>
+
+        <ng-template #noCollection>
+          <p>There are no collections</p>
+        </ng-template>
+
+      </div>
+  </section>
