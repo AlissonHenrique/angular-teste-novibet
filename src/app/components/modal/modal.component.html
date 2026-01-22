@@ -4,14 +4,30 @@ X
   </div>
   <div class="dialog-body" >
     <div>
-      <h2>{{data.name}}</h2>
-      <p>{{data.status}}</p>
-      <p>{{data.species}}</p>
-      <p>{{data.gender}}</p>
-      <p>{{data.origin.name}}</p>
-      <p>{{data.location.name}}</p>
+      <h2>{{data.item.name}}</h2>
+      <p>{{data.item.status}}</p>
+      <p>{{data.item.species}}</p>
+      <p>{{data.item.gender}}</p>
+      <p>{{data.item.origin.name}}</p>
+      <p>{{data.item.location.name}}</p>
+     <br/>
+        <div class="rating" role="radiogroup" aria-label="Avaliação" *ngIf="data.showSelect">
+          <button
+            mat-icon-button
+            *ngFor="let star of stars; let i = index"
+            (click)="setRating(i + 1)"
+            [attr.aria-checked]=" rating === i + 1"
+            role="radio"
+            [attr.aria-label]="'Avaliar com ' + (i + 1) + ' estrelas'">
+
+            <mat-icon color="warn">
+              {{ i < rating ? 'star' : 'star_border' }}
+            </mat-icon>
+
+          </button>
+    </div>
   </div>
-  <div class="dialog-body-collection">
+  <div class="dialog-body-collection" *ngIf="data.showSelect">
     Add collection:
 
 
@@ -21,7 +37,7 @@ X
       <mat-select [(ngModel)]="selectedValue">
 
         <mat-option *ngIf="!itemsCollection || itemsCollection.length === 0" disabled>
-          Nenhuma opção disponível
+          No option available
         </mat-option>
 
 

@@ -1,4 +1,4 @@
-import { observable } from './../../../../node_modules/rxjs/src/internal/symbol/observable';
+
 import { Component, inject, ViewChild } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -7,7 +7,6 @@ import { Observable,map } from 'rxjs';
 import { ModalComponent } from '../../components/modal/modal.component';
 import { Character } from '../../interface/ICharacters';
 import { MatDialog } from '@angular/material/dialog';
-import { RouterLink } from "@angular/router";
 
 
 @Component({
@@ -37,7 +36,11 @@ constructor(){
   });
 
   this.list$ = this.dataService.getList().pipe(
-    map((res:any)=>res.results),
+    map((res:any)=>res.results.map((it:any)=>({
+      ...it,
+      rating: 0
+    }))),
+
   );
 }
 
@@ -48,7 +51,10 @@ onSubmit(){
 openDialog(item: any) {
   this.dialog.open(ModalComponent, {
     width: '600px',
-    data: item
+     data:  {
+        item,
+        showSelect:true
+      }
   });
 
 }

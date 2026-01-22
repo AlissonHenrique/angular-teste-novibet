@@ -20,7 +20,8 @@ export interface Character {
   image: string;
   episode: string[];
   url: string;
-  created: string; // ISO date
+  created: string;
+  rating?:number
 }
 export interface LocationRef {
   name: string;

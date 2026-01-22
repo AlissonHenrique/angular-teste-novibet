@@ -44,7 +44,10 @@ getParams(){
   openDialog(item: any) {
     this.dialog.open(ModalComponent, {
       width: '420px',
-      data: item
+      data:  {
+        item,
+        showSelect:false
+      }
     });
 }
 onDelete(item:Character){
